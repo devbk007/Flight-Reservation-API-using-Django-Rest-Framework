@@ -25,5 +25,5 @@ class Passenger(models.Model):
         return self.email
 
 class Reservation(models.Model):
-    flight = models.OneToOneField(Flight, on_delete=models.CASCADE) # means, if a flight is deleted, delete the reservation also
+    flight = models.ForeignKey(Flight, on_delete=models.CASCADE) # means, if a flight is deleted, delete the reservation also
     passenger = models.OneToOneField(Passenger, on_delete=models.CASCADE) # means, if a passenger is deleted, delete the reservation also
