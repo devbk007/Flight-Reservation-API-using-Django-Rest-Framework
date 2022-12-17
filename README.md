@@ -18,25 +18,31 @@ A Django Rest Framework APIs to perform CRUD operations. JWT Authentication is a
     pipenv install
     ```
 
+    ```
+    pipenv install PyJWT==1.7.1
+    ```
+
 2. Activate virtual environment
     ```
     pipenv shell
     ```
 
-3. Perform migrations.
+3. Delete the file Flight-Reservation-API-using-Django-Rest-Framework/flightServices/db.sqlite3.
+
+4. Perform migrations.
     ```
     python manage.py makemigrations
     ```
     ```
-    python manage.py migrate --run-syncdb
+    python manage.py migrate
     ```
 
-4. Create a superuser
+5. Create a superuser
      ```
     python manage.py createsuperuser
     ```
   
-5. Run the command 
+6. Run the command 
     ```
     python manage.py runserver
     ```
