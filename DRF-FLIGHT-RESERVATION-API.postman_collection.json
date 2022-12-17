@@ -122,6 +122,123 @@
 			]
 		},
 		{
+			"name": "Find single Flight",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjcwMzQyLCJqdGkiOiI0ZjljODZlZDIyZTI0YjVlOWJiYzdhOTc5Y2NjZjhmOCIsInVzZXJfaWQiOjJ9.-vI07WHjxJ0ETB3zrDfmnpaHVfDMMY1sB2Rnz13M4h0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjEzODcyLCJqdGkiOiJmZmIyYWFjNGE2YmE0YjVhYTRlODFmODQwYmE4ZTZhNiIsInVzZXJfaWQiOjF9.oDzi7AHxDN3JIbgBO7KbWhZVH_vhqCEmtcnBAVuxg1s",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/flights/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"flights",
+						"2",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find single Flight",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjEzODcyLCJqdGkiOiJmZmIyYWFjNGE2YmE0YjVhYTRlODFmODQwYmE4ZTZhNiIsInVzZXJfaWQiOjF9.oDzi7AHxDN3JIbgBO7KbWhZVH_vhqCEmtcnBAVuxg1s",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flights/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flights",
+								"2",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 17 Dec 2022 09:40:51 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "172"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"flightNumber\": \"2\",\n    \"operatingAirlines\": \"Indigo@\",\n    \"departureCity\": \"Kochi\",\n    \"arrivalCity\": \"Delhi\",\n    \"dateOfDeparture\": \"2022-12-15\",\n    \"estimatedTimeOfDeparture\": \"10:22:00\"\n}"
+				}
+			]
+		},
+		{
 			"name": "Find Flights based on conditions",
 			"request": {
 				"auth": {
@@ -1637,7 +1754,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/reservations/3/",
+					"raw": "http://127.0.0.1:8000/api/reservations/5/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -1649,7 +1766,7 @@
 					"path": [
 						"api",
 						"reservations",
-						"3",
+						"5",
 						""
 					]
 				}
