@@ -21,16 +21,18 @@ def find_flights(request):
     return paginator.get_paginated_response(serializer.data)
     
 class FlightViewSet(viewsets.ModelViewSet):
-    queryset = Flight.objects.all()
+    queryset = Flight.objects.all().order_by('id')
     serializer_class = FlightSerializer
     permission_classes = (IsAuthenticated,)
 
 class PassengerViewSet(viewsets.ModelViewSet):
-    queryset = Passenger.objects.all()
+    queryset = Passenger.objects.all().order_by('id')
     serializer_class = PassengerSerializer
     permission_classes = (IsAuthenticated,)
+    ordering = ['-id']
 
 class ReservationViewSet(viewsets.ModelViewSet):
-    queryset = Reservation.objects.all()
+    queryset = Reservation.objects.all().order_by('id')
     serializer_class = ReservationSerializer
     permission_classes = (IsAuthenticated,)
+    ordering = ['-id']
