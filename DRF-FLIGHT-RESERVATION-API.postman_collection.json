@@ -1,0 +1,2027 @@
+{
+	"info": {
+		"_postman_id": "327d94f4-a24e-40fe-8782-4950d4709aa7",
+		"name": "DRF-FLIGHT-RESERVATION-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24212339"
+	},
+	"item": [
+		{
+			"name": "Find All Flights",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjYyMTY1LCJqdGkiOiI2ODMyNWIwYzQzZDQ0NjA3YmZiYzdiYzFhNjNhMDhkMyIsInVzZXJfaWQiOjJ9.1XqQiiJtn11dvdtAemP1u5dLx8vF1TnbS9su6Vke2Jk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjEzODcyLCJqdGkiOiJmZmIyYWFjNGE2YmE0YjVhYTRlODFmODQwYmE4ZTZhNiIsInVzZXJfaWQiOjF9.oDzi7AHxDN3JIbgBO7KbWhZVH_vhqCEmtcnBAVuxg1s",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/flights/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"flights",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find All Flights",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjEzODcyLCJqdGkiOiJmZmIyYWFjNGE2YmE0YjVhYTRlODFmODQwYmE4ZTZhNiIsInVzZXJfaWQiOjF9.oDzi7AHxDN3JIbgBO7KbWhZVH_vhqCEmtcnBAVuxg1s",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flights/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flights",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 17 Dec 2022 06:25:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "263"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 3,\n    \"next\": \"http://127.0.0.1:8000/api/flights/?page=2\",\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 1,\n            \"flightNumber\": \"1\",\n            \"operatingAirlines\": \"Vistara\",\n            \"departureCity\": \"Kochi\",\n            \"arrivalCity\": \"Delhi\",\n            \"dateOfDeparture\": \"2022-12-15\",\n            \"estimatedTimeOfDeparture\": \"10:22:00\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Find Flights based on conditions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjYyMTY1LCJqdGkiOiI2ODMyNWIwYzQzZDQ0NjA3YmZiYzdiYzFhNjNhMDhkMyIsInVzZXJfaWQiOjJ9.1XqQiiJtn11dvdtAemP1u5dLx8vF1TnbS9su6Vke2Jk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token c8b6f291179b99fd974ad248d43b4b324daab9e6",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"departureCity\": \"Kochi\",\r\n    \"arrivalCity\": \"Delhi\",\r\n    \"dateOfDeparture\": \"2022-12-15\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/findFlights/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"findFlights",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find Flights based on conditions",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"departureCity\": \"Kochi\",\r\n    \"arrivalCity\": \"Delhi\",\r\n    \"dateOfDeparture\": \"2022-12-15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/findFlights/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"findFlights",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 16:10:43 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, POST"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "173"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"flightNumber\": \"1\",\n        \"operatingAirlines\": \"Indigo\",\n        \"departureCity\": \"Kochi\",\n        \"arrivalCity\": \"Delhi\",\n        \"dateOfDeparture\": \"2022-12-15\",\n        \"estimatedTimeOfDeparture\": \"10:22:00\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Add Flight",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjYyMTY1LCJqdGkiOiI2ODMyNWIwYzQzZDQ0NjA3YmZiYzdiYzFhNjNhMDhkMyIsInVzZXJfaWQiOjJ9.1XqQiiJtn11dvdtAemP1u5dLx8vF1TnbS9su6Vke2Jk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"flightNumber\" : \"3\",\r\n    \"operatingAirlines\" : \"Vistara\",\r\n    \"departureCity\" : \"Bengaluru\",\r\n    \"arrivalCity\" : \"Delhi\",\r\n    \"dateOfDeparture\" : \"2022-12-15\",\r\n    \"estimatedTimeOfDeparture\" : \"10:22:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/flights/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"flights",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Flight",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"flightNumber\" : \"1\",\r\n    \"operatingAirlines\" : \"Indigo\",\r\n    \"departureCity\" : \"Kochi\",\r\n    \"arrivalCity\" : \"Delhi\",\r\n    \"dateOfDeparture\" : \"2022-12-15\",\r\n    \"estimatedTimeOfDeparture\" : \"10:22:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flights/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flights",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 17 Dec 2022 06:38:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "171"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"flightNumber\": \"1\",\n    \"operatingAirlines\": \"Indigo\",\n    \"departureCity\": \"Kochi\",\n    \"arrivalCity\": \"Delhi\",\n    \"dateOfDeparture\": \"2022-12-15\",\n    \"estimatedTimeOfDeparture\": \"10:22:00\"\n}"
+				},
+				{
+					"name": "Validation Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"flightNumber\" : \"3@\",\r\n    \"operatingAirlines\" : \"Indigo\",\r\n    \"departureCity\" : \"Kochi\",\r\n    \"arrivalCity\" : \"Delhi\",\r\n    \"dateOfDeparture\" : \"2022-12-15\",\r\n    \"estimatedTimeOfDeparture\" : \"10:22:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flights/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flights",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 17 Dec 2022 06:38:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "76"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"non_field_errors\": [\n        \"Invalid Flight Number. Make sure, its alpha numeric\"\n    ]\n}"
+				},
+				{
+					"name": "Unique contraint",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"flightNumber\" : \"1\",\r\n    \"operatingAirlines\" : \"Indigo\",\r\n    \"departureCity\" : \"Kochi\",\r\n    \"arrivalCity\" : \"Delhi\",\r\n    \"dateOfDeparture\" : \"2022-12-15\",\r\n    \"estimatedTimeOfDeparture\" : \"10:22:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flights/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flights",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 17 Dec 2022 06:39:20 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"flightNumber\": [\n        \"flight with this flightNumber already exists.\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update flight",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjYyMTY1LCJqdGkiOiI2ODMyNWIwYzQzZDQ0NjA3YmZiYzdiYzFhNjNhMDhkMyIsInVzZXJfaWQiOjJ9.1XqQiiJtn11dvdtAemP1u5dLx8vF1TnbS9su6Vke2Jk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"flightNumber\" : \"4\",\r\n    \"operatingAirlines\" : \"Vistara Air\",\r\n    \"departureCity\" : \"Kochi\",\r\n    \"arrivalCity\" : \"Delhi\",\r\n    \"dateOfDeparture\" : \"2022-12-15\",\r\n    \"estimatedTimeOfDeparture\" : \"10:22:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/flights/4/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"flights",
+						"4",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update flight",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"flightNumber\" : \"1\",\r\n    \"operatingAirlines\" : \"Indigos\",\r\n    \"departureCity\" : \"Kochi\",\r\n    \"arrivalCity\" : \"Delhi\",\r\n    \"dateOfDeparture\" : \"2022-12-15\",\r\n    \"estimatedTimeOfDeparture\" : \"10:22:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flights/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flights",
+								"1",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 17 Dec 2022 07:14:45 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "172"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"flightNumber\": \"1\",\n    \"operatingAirlines\": \"Indigos\",\n    \"departureCity\": \"Kochi\",\n    \"arrivalCity\": \"Delhi\",\n    \"dateOfDeparture\": \"2022-12-15\",\n    \"estimatedTimeOfDeparture\": \"10:22:00\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Flight",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjYyMTY1LCJqdGkiOiI2ODMyNWIwYzQzZDQ0NjA3YmZiYzdiYzFhNjNhMDhkMyIsInVzZXJfaWQiOjJ9.1XqQiiJtn11dvdtAemP1u5dLx8vF1TnbS9su6Vke2Jk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/flights/4/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"flights",
+						"4",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Flight",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/flights/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"flights",
+								"1",
+								""
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 17 Dec 2022 07:16:02 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Find All Passengers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjYyMTY1LCJqdGkiOiI2ODMyNWIwYzQzZDQ0NjA3YmZiYzdiYzFhNjNhMDhkMyIsInVzZXJfaWQiOjJ9.1XqQiiJtn11dvdtAemP1u5dLx8vF1TnbS9su6Vke2Jk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token c8b6f291179b99fd974ad248d43b4b324daab9e6",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/passengers/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"passengers",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find All Passengers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token c8b6f291179b99fd974ad248d43b4b324daab9e6",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/passengers/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"passengers",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 17 Dec 2022 06:45:44 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "210"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 2,\n    \"next\": \"http://127.0.0.1:8000/api/passengers/?page=2\",\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 1,\n            \"firstName\": \"Alan\",\n            \"lastName\": \"Thomas\",\n            \"middleName\": \"Peter\",\n            \"email\": \"alan@example.com\",\n            \"phone\": \"9123456789\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Passenger",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjYyMTY1LCJqdGkiOiI2ODMyNWIwYzQzZDQ0NjA3YmZiYzdiYzFhNjNhMDhkMyIsInVzZXJfaWQiOjJ9.1XqQiiJtn11dvdtAemP1u5dLx8vF1TnbS9su6Vke2Jk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Aswin\",\r\n    \"lastName\" : \"Mathew\",\r\n    \"middleName\" : \"\",\r\n    \"email\" : \"aswin@example.com\",\r\n    \"phone\" : \"9876543210\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/passengers/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"passengers",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Passenger",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Alan\",\r\n    \"lastName\" : \"Thomas\",\r\n    \"middleName\" : \"Peter\",\r\n    \"email\" : \"alan@example.com\",\r\n    \"phone\" : \"9123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/passengers/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"passengers",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 15:55:38 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "116"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"firstName\": \"Alan\",\n    \"lastName\": \"Thomas\",\n    \"middleName\": \"Peter\",\n    \"email\": \"alan@example.com\",\n    \"phone\": \"9123456789\"\n}"
+				},
+				{
+					"name": "Unique constaint",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Alan\",\r\n    \"lastName\" : \"Thomas\",\r\n    \"middleName\" : \"Peter\",\r\n    \"email\" : \"alan@example.com\",\r\n    \"phone\" : \"9123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/passengers/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"passengers",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 17 Dec 2022 06:42:31 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "55"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"email\": [\n        \"passenger with this email already exists.\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete passenger",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjYyMTY1LCJqdGkiOiI2ODMyNWIwYzQzZDQ0NjA3YmZiYzdiYzFhNjNhMDhkMyIsInVzZXJfaWQiOjJ9.1XqQiiJtn11dvdtAemP1u5dLx8vF1TnbS9su6Vke2Jk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/passengers/3/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"passengers",
+						"3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update passenger",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjYyMTY1LCJqdGkiOiI2ODMyNWIwYzQzZDQ0NjA3YmZiYzdiYzFhNjNhMDhkMyIsInVzZXJfaWQiOjJ9.1XqQiiJtn11dvdtAemP1u5dLx8vF1TnbS9su6Vke2Jk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Athul\",\r\n    \"lastName\" : \"Saviour\",\r\n    \"middleName\" : \"\",\r\n    \"email\" : \"athul@example.com\",\r\n    \"phone\" : \"9876543210\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/passengers/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"passengers",
+						"2",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update passenger",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Athul\",\r\n    \"lastName\" : \"Saviour\",\r\n    \"middleName\" : \"\",\r\n    \"email\" : \"athul@example.com\",\r\n    \"phone\" : \"9876543210\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/passengers/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"passengers",
+								"2",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 17 Dec 2022 07:21:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "114"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"firstName\": \"Athul\",\n    \"lastName\": \"Saviour\",\n    \"middleName\": \"\",\n    \"email\": \"athul@example.com\",\n    \"phone\": \"9876543210\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Find All Reservations",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjYyMTY1LCJqdGkiOiI2ODMyNWIwYzQzZDQ0NjA3YmZiYzdiYzFhNjNhMDhkMyIsInVzZXJfaWQiOjJ9.1XqQiiJtn11dvdtAemP1u5dLx8vF1TnbS9su6Vke2Jk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token c8b6f291179b99fd974ad248d43b4b324daab9e6",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/reservations/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"reservations",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find All Reservations",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token c8b6f291179b99fd974ad248d43b4b324daab9e6",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservations/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservations",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 17 Dec 2022 06:45:59 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "129"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 2,\n    \"next\": \"http://127.0.0.1:8000/api/reservations/?page=2\",\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 1,\n            \"flight\": 1,\n            \"passenger\": 1\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Reservation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjYyMTY1LCJqdGkiOiI2ODMyNWIwYzQzZDQ0NjA3YmZiYzdiYzFhNjNhMDhkMyIsInVzZXJfaWQiOjJ9.1XqQiiJtn11dvdtAemP1u5dLx8vF1TnbS9su6Vke2Jk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"flight\" : 1,\r\n    \"passenger\" : 2\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/reservations/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"reservations",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Reservation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"flight\" : 1,\r\n    \"passenger\" : 1\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservations/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservations",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 15 Dec 2022 15:57:26 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"flight\": 1,\n    \"passenger\": 1\n}"
+				},
+				{
+					"name": "Unique constraint",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"flight\" : 1,\r\n    \"passenger\" : 1\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservations/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservations",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 17 Dec 2022 06:45:16 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"passenger\": [\n        \"This field must be unique.\"\n    ]\n}"
+				},
+				{
+					"name": "Does not exist error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"flight\" : 10,\r\n    \"passenger\" : 20\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reservations/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservations",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 17 Dec 2022 07:04:53 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "116"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"flight\": [\n        \"Invalid pk \\\"10\\\" - object does not exist.\"\n    ],\n    \"passenger\": [\n        \"Invalid pk \\\"20\\\" - object does not exist.\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete reservation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjYyMTY1LCJqdGkiOiI2ODMyNWIwYzQzZDQ0NjA3YmZiYzdiYzFhNjNhMDhkMyIsInVzZXJfaWQiOjJ9.1XqQiiJtn11dvdtAemP1u5dLx8vF1TnbS9su6Vke2Jk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/reservations/3/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"reservations",
+						"3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"test\",\r\n    \"password1\":\"test@1234\",\r\n    \"password2\":\"test@1234\",\r\n    \"email\":\"testtest@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/dj-rest-auth/registration/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"dj-rest-auth",
+						"registration",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"test\",\r\n    \"password1\":\"test@1234\",\r\n    \"password2\":\"test@1234\",\r\n    \"email\":\"testtest@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/dj-rest-auth/registration/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"dj-rest-auth",
+								"registration",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 17 Dec 2022 06:36:48 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "544"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "messages=.eJyLjlaKj88qzs-Lz00tLk5MT1XSMdAxMtVRCi5NTgaKpJXm5FQqFGem56WmKGTmKSQWKyQlZlal5ugpxeqQrrcktbiEIp2xADAgPNU:1p6QoS:WjSCvmidOfsWEb0H2pSJvXoSKCGIoH-w5wx91A3g0FI; HttpOnly; Path=/; SameSite=Lax"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "csrftoken=O1MpnVKqFV8lj50tN81gbx4VaVAXlEuupgpNsKvArBEe2AHh8LUQXZ1s4txmW2cu; expires=Sat, 16 Dec 2023 06:36:48 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "sessionid=nfp4yoibi10865hv47sjp25jcdsabtvd; expires=Sat, 31 Dec 2022 06:36:48 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjU5MzA4LCJqdGkiOiI5YWYyOWU4MzEzZDQ0YzZjOTJiNTVjNWM0ZjUzNjFiYSIsInVzZXJfaWQiOjJ9.9E7rdnm9ghjLRy9Mc3dXbOL7MG1hHMFRnXnqBSvLnrc\",\n    \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY3MTM0NTQwOCwianRpIjoiNGQ1MDIyMDQ5ODU4NGJmYWIxNTYyYTA4NjM2YTFlY2MiLCJ1c2VyX2lkIjoyfQ.Ax_xn3VfHd6-KutNlg9L-6wpvJ8GSZHAHuuvcdTsPhk\",\n    \"user\": {\n        \"pk\": 2,\n        \"username\": \"test\",\n        \"email\": \"testtest@gmail.com\",\n        \"first_name\": \"\",\n        \"last_name\": \"\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"test\",\r\n    \"password\":\"test@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/dj-rest-auth/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"dj-rest-auth",
+						"login",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"test\",\r\n    \"password\":\"test@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/dj-rest-auth/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"dj-rest-auth",
+								"login",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 17 Dec 2022 06:37:34 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "544"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "my-app-auth=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjU5MzUzLCJqdGkiOiIzOGU4MTBkNTIxNWE0ZmU3YWFmOGRkMzc5NDAyYWIzNiIsInVzZXJfaWQiOjJ9.KPFUuD0LG5dk2mSBubNeIBmgQM3p2lvUYMIS1GZg6rs; expires=Sat, 17 Dec 2022 06:42:35 GMT; HttpOnly; Max-Age=301; Path=/; SameSite=Lax"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "my-refresh-token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY3MTM0NTQ1MywianRpIjoiMWI4NTFmYWQzYTAwNGM5ODgwMTFlNDA2MDVkZDYwNjgiLCJ1c2VyX2lkIjoyfQ.vhi029EzLxL5TNJ6O2bjvqR61w2NEszoi_IY6zJxbiI; expires=Sun, 18 Dec 2022 06:37:35 GMT; HttpOnly; Max-Age=86401; Path=/; SameSite=Lax"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "csrftoken=k8e07C93byiwBCQlugESrMORDUgIVLeBOLfoAeG5q266kEetwklM8BIyVQXJ18sW; expires=Sat, 16 Dec 2023 06:37:34 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "sessionid=n7u41zgyk8lrmxakximpipnhgae2pvek; expires=Sat, 31 Dec 2022 06:37:34 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjU5MzUzLCJqdGkiOiIzOGU4MTBkNTIxNWE0ZmU3YWFmOGRkMzc5NDAyYWIzNiIsInVzZXJfaWQiOjJ9.KPFUuD0LG5dk2mSBubNeIBmgQM3p2lvUYMIS1GZg6rs\",\n    \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY3MTM0NTQ1MywianRpIjoiMWI4NTFmYWQzYTAwNGM5ODgwMTFlNDA2MDVkZDYwNjgiLCJ1c2VyX2lkIjoyfQ.vhi029EzLxL5TNJ6O2bjvqR61w2NEszoi_IY6zJxbiI\",\n    \"user\": {\n        \"pk\": 2,\n        \"username\": \"test\",\n        \"email\": \"testtest@gmail.com\",\n        \"first_name\": \"\",\n        \"last_name\": \"\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Logout User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/dj-rest-auth/logout/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"dj-rest-auth",
+						"logout",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Logout User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/dj-rest-auth/logout/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"dj-rest-auth",
+								"logout",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 17 Dec 2022 06:37:25 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.6.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "my-app-auth=\"\"; expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; Path=/"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "my-refresh-token=\"\"; expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; Path=/"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "sessionid=\"\"; expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; Path=/; SameSite=Lax"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Successfully logged out.\"\n}"
+				}
+			]
+		}
+	]
+}
