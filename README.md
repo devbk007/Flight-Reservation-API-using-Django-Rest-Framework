@@ -13,7 +13,7 @@ REST APIs created using Django Rest Framework to perform CRUD operation for flig
 10. User logout.
 
 # Database Model
-![Database Model](https://github.com/devbk007/Flight-Reservation-API-using-Django-Rest-Framework/blob/master/database model.png?raw=true)
+![Database Model](https://github.com/devbk007/Flight-Reservation-API-using-Django-Rest-Framework/blob/master/database_model.png?raw=true)
 
 # Steps to install application
 1. Install packages    
