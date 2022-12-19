@@ -1,4 +1,4 @@
-A Django Rest Framework APIs to perform CRUD operations. JWT Authentication is added to all the API's.
+REST APIs created using Django Rest Framework to perform CRUD operation for flight reservation.. JWT Authentication is added to all the API's.
 
 # Operations handled by APIs
 1. Add, Update, Delete and Read details of a single flight.
@@ -11,6 +11,9 @@ A Django Rest Framework APIs to perform CRUD operations. JWT Authentication is a
 8. User registration.
 9. User login.
 10. User logout.
+
+# Database Model
+![Database Model](https://github.com/devbk007/Flight-Reservation-API-using-Django-Rest-Framework/blob/master/database model.png?raw=true)
 
 # Steps to install application
 1. Install packages    
